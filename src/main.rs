@@ -266,7 +266,7 @@ fn main() -> Result<()> {
                     log::warn!("{} already exists{is_file}", d.display());
                     continue;
                 }
-                fs::create_dir(&d)
+                fs::create_dir_all(&d)
                     .with_context(|| format!("Failed to create {} dir", d.display()))?;
             }
 
